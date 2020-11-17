@@ -49,7 +49,7 @@ describe('crud controllers', () => {
 
       const res = {
         status(status) {
-          expect(status).toBe(400)
+          expect(status).toBe(404)
           return this
         },
         end() {
@@ -169,7 +169,7 @@ describe('crud controllers', () => {
       await updateOne(List)(req, res)
     })
 
-    test('400 if no doc', async () => {
+    test('404 if no doc', async () => {
       expect.assertions(2)
 
       const user = mongoose.Types.ObjectId()
@@ -183,7 +183,7 @@ describe('crud controllers', () => {
 
       const res = {
         status(status) {
-          expect(status).toBe(400)
+          expect(status).toBe(404)
           return this
         },
         end() {
@@ -220,7 +220,7 @@ describe('crud controllers', () => {
       await removeOne(List)(req, res)
     })
 
-    test('400 if no doc', async () => {
+    test('404 if no doc', async () => {
       expect.assertions(2)
       const user = mongoose.Types.ObjectId()
 
@@ -231,7 +231,7 @@ describe('crud controllers', () => {
 
       const res = {
         status(status) {
-          expect(status).toBe(400)
+          expect(status).toBe(404)
           return this
         },
         end() {
